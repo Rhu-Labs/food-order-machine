@@ -1,4 +1,4 @@
-interface MenuGroup {
+export interface MenuGroup {
     id: number;
     name: string;
 }
