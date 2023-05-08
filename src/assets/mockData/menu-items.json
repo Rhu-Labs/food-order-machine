@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "Cheeseburger",
+        "description": "Classic beef patty with melted cheddar, lettuce, tomato, and special sauce.",
+        "price": 79,
+        "groupId": 1
+    },
+    {
+        "id": 2,
+        "name": "Small Burger Set",
+        "description": "Cheeseburger with fries and a soft drink.",
+        "price": 109,
+        "groupId": 1
+    },
+    {
+        "id": 3,
+        "name": "Large Burger Set",
+        "description": "Cheeseburger with fries, a soft drink, and a dessert.",
+        "price": 149,
+        "groupId": 1
+    },
+    {
+        "id": 4,
+        "name": "Margherita Pizza",
+        "description": "Traditional Italian pizza with fresh mozzarella, basil, and tomato sauce.",
+        "price": 99,
+        "groupId": 2
+    },
+    {
+        "id": 5,
+        "name": "Caesar Salad",
+        "description": "Crisp romaine lettuce, Parmesan cheese, croutons, and Caesar dressing.",
+        "price": 69,
+        "groupId": 3
+    },
+    {
+        "id": 6,
+        "name": "Chicken Alfredo Pasta",
+        "description": "Grilled chicken with creamy Alfredo sauce, served over fettuccine pasta.",
+        "price": 119,
+        "groupId": 4
+    },
+    {
+        "id": 7,
+        "name": "Chocolate Brownie Sundae",
+        "description": "Warm chocolate brownie topped with vanilla ice cream and drizzled with chocolate sauce.",
+        "price": 79,
+        "groupId": 5
+    }
+]
