@@ -1,0 +1,17 @@
+.lets-begin{
+    font-size: large;
+}
+
+.choose-type-of-order{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.eat-in,.take-away {
+    padding: 50px 20px;
+    margin: 20px;
+    img{
+        width: 50%;
+    }
+}

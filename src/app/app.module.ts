@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CapacityService } from './services/capacity.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    CapacityService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
