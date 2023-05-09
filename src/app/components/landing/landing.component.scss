@@ -1,17 +1,27 @@
-.lets-begin{
+.lets-begin {
     font-size: large;
 }
 
-.choose-type-of-order{
-display: flex;
-flex-direction: row;
-justify-content: center;
+.choose-type-of-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.eat-in,.take-away {
-    padding: 50px 20px;
-    margin: 20px;
-    img{
+.eat-in-property,
+.take-away {
+    img {
         width: 50%;
     }
+}
+
+button {
+    padding: 50px 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.deactivated {
+    opacity: 45%;
+    cursor: not-allowed;
 }

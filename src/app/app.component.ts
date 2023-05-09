@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'food-order-machine';
+export class AppComponent implements OnInit {
+  restaurantName: string = '';
+
+  ngOnInit(): void {
+    this.restaurantName = 'The Food Shop'
+  }
+
 }
