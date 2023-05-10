@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CapacityService } from 'src/app/services/capacity.service';
 import { Router } from '@angular/router';
+import { AppSettingsService } from 'src/app/services/app-settings.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-  constructor(private capacityService: CapacityService, private router:Router) 
+  constructor(private capacityService: CapacityService, private router:Router, private AppSettingService: AppSettingsService) 
   {
   }
   restaurantName: string = '';
@@ -23,8 +24,8 @@ export class LandingComponent implements OnInit {
     this.currentCapacity = this.capacityService.getCapacity();
     this.capacityMessage = this.setCapacityMessage();
     this.orderIsDisabled = this.disabledButton();
-    this.restaurantName = 'The Food Shop';
-    this.welcomeDescription = 'Welcome to ThisFoodApp, the easiest and fastest way to order your favorite food. With ThisFoodApp, you can browse menus, customize your orders, pay securely, and get your food in minutes';
+    this.restaurantName = this.AppSettingService.getRestaurantName();
+    this.welcomeDescription = 'Welcome! the easiest and fastest way to order your favorite food. With ThisFoodApp, you can browse menus, customize your orders, pay securely, and get your food in minutes';
     this.beginMessage = "Let's begin!";
 
   }
