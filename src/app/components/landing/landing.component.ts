@@ -11,7 +11,9 @@ import { CapacityService } from 'src/app/services/capacity.service';
 export class LandingComponent implements OnInit {
   constructor(private capacityService: CapacityService) {
   }
-
+  restaurantName: string = '';
+  welcomeDescription: string = '';
+  beginMessage: string = '';
   currentCapacity: number = 0;
   capacityMessage: string = '';
   orderIsDisabled: boolean = false
@@ -20,7 +22,9 @@ export class LandingComponent implements OnInit {
     this.currentCapacity = this.capacityService.getCapacity();
     this.capacityMessage = this.oneOrZeroSeat();
     this.orderIsDisabled = this.disabledButton();
-
+    this.restaurantName = 'The Food Shop';
+    this.welcomeDescription = 'Welcome to ThisFoodApp, the easiest and fastest way to order your favorite food. With ThisFoodApp, you can browse menus, customize your orders, pay securely, and get your food in minutes';
+    this.beginMessage = "Let's begin!";
   }
 
   oneOrZeroSeat(): string {
@@ -28,7 +32,7 @@ export class LandingComponent implements OnInit {
     if (currentCapacityInBox === 0)
       return 'There are no tables available';
     else if (currentCapacityInBox === 1)
-      return 'there is 1 table available';
+      return 'There is 1 table available';
     else
       return `There are ${this.currentCapacity} tables available`;
   }
