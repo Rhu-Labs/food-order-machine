@@ -20,14 +20,14 @@ export class LandingComponent implements OnInit {
 
   ngOnInit(): any {
     this.currentCapacity = this.capacityService.getCapacity();
-    this.capacityMessage = this.oneOrZeroSeat();
+    this.capacityMessage = this.setCapacityMessage();
     this.orderIsDisabled = this.disabledButton();
     this.restaurantName = 'The Food Shop';
     this.welcomeDescription = 'Welcome to ThisFoodApp, the easiest and fastest way to order your favorite food. With ThisFoodApp, you can browse menus, customize your orders, pay securely, and get your food in minutes';
     this.beginMessage = "Let's begin!";
   }
 
-  oneOrZeroSeat(): string {
+  setCapacityMessage(): string {
     let currentCapacityInBox = this.currentCapacity;
     if (currentCapacityInBox === 0)
       return 'There are no tables available';
