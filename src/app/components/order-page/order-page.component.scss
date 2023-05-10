@@ -1,0 +1,10 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+    gap: 10rem;
+
+    div {
+        border: 3px solid blue;
+   }
+}

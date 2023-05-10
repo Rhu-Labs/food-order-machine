@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SideBarMenu } from 'src/app/models/side-bar-menu';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
 
 @Component({
@@ -7,13 +8,19 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
   styleUrls: ['./order-page.component.scss']
 })
 export class OrderPageComponent implements OnInit {
-  constructor(private AppSettingsService: AppSettingsService)
-{}
+side: any;
+  constructor(private AppSettingsService: AppSettingsService) { }
 
-restaurantName: string = '';
+  restaurantName: string = '';
+  datas: SideBarMenu[] = [];
 
-ngOnInit(): void {
-  this.restaurantName = this.AppSettingsService.getRestaurantName()
-}
 
+  ngOnInit(): void {
+    this.restaurantName = this.AppSettingsService.getRestaurantName()
+    this.datas = [
+      new SideBarMenu('logohere', 'Burgers'),
+      new SideBarMenu('logohere', 'Pizzas'),
+      new SideBarMenu('logohere', 'Desserts')
+    ]
+  }
 }

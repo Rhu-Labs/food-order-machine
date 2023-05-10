@@ -1,5 +1,8 @@
-<div>
-    {{restaurantName}}
-    <div>This is the side bar</div>
+<h1>{{restaurantName}}</h1>
+
+<div class="content">
+    <div *ngFor="let content of datas">
+        <div>{{content.logoPath}}</div>
+        <div>{{content.groupType}}</div></div>
     <div>This is the menu</div>
 </div>
