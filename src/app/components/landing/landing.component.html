@@ -1,1 +1,11 @@
-<p>ask the user if they want äta här or ta med</p>
+<h1>Welcome to {{restaurantName}}</h1>
+<p>{{welcomeDescription}}</p>
+<p class="lets-begin">{{beginMessage}}</p>
+
+<div class="choose-type-of-order">
+    <div class="eat-in-property">
+        <button type="submit"  [disabled]="orderIsDisabled" [ngClass]="{'deactivated':orderIsDisabled}"><img src="../../../assets/images/dine-in.jpeg" /><br>Dine-in
+        <p>{{capacityMessage}}</p></button>
+    </div>
+    <button class="take-away"><img src="../../../assets/images/take-away.jpeg" /><br>Take-away</button>
+</div>  
