@@ -1,8 +1,11 @@
 <h1>{{restaurantName}}</h1>
 
 <div class="content">
-    <div *ngFor="let content of datas">
-        <div>{{content.logoPath}}</div>
-        <div>{{content.groupType}}</div></div>
-    <div>This is the menu</div>
+    <div class="sidebar-menu" >
+        <button *ngFor="let content of datas" (click)="groupSelected(content.groupType)" [ngClass]="{'active-thumbnail': selectedGroup == content.groupType}">
+            <img [src]="content.logoPath">
+            <p>{{content.groupType}}</p>
+        </button>
+    </div>
+    <div class="menu">This is the menu</div>
 </div>

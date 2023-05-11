@@ -8,19 +8,27 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
   styleUrls: ['./order-page.component.scss']
 })
 export class OrderPageComponent implements OnInit {
-side: any;
   constructor(private AppSettingsService: AppSettingsService) { }
 
   restaurantName: string = '';
   datas: SideBarMenu[] = [];
-
+  selectedGroup: string = '';
 
   ngOnInit(): void {
     this.restaurantName = this.AppSettingsService.getRestaurantName()
     this.datas = [
-      new SideBarMenu('logohere', 'Burgers'),
-      new SideBarMenu('logohere', 'Pizzas'),
-      new SideBarMenu('logohere', 'Desserts')
-    ]
+      new SideBarMenu('../../../assets/images/Burger Logo.png', 'Burgers'),
+      new SideBarMenu('../../../assets/images/Pizza Logo.jpg', 'Pizzas'),
+      new SideBarMenu('../../../assets/images/Desserts Logo.jpg', 'Desserts')
+    ];
+
+    this.selectedGroup = this.datas[0].groupType
   }
+
+  groupSelected(thumbnailThatIsClicked:string) {
+    this.selectedGroup = thumbnailThatIsClicked ;
+  }
+
 }
+
+
