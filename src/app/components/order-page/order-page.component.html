@@ -2,11 +2,11 @@
 
 <div class="content">
     <div class="sidebar-menu">
-        <button *ngFor="let content of groupItems" (click)="groupSelected(content.id)"
-            [ngClass]="{'active-thumbnail': selectedGroupNumber == content.id}">
-            <img [src]="content.logoPath">
-            <p>{{content.name}}</p>
+        <button *ngFor="let item of groupItems" (click)="groupSelected(item.id)"
+            [ngClass]="{'active-thumbnail': selectedGroupNumber == item.id}">
+            <img [src]="item.logoPath">
+            <p>{{item.name}}</p>
         </button>
     </div>
-    <div class="menu">{{selectedGroupName}}</div>
+    <div class="menu">User selected {{selectedGroupName}}</div>
 </div>

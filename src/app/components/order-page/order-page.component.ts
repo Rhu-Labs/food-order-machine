@@ -15,26 +15,22 @@ export class OrderPageComponent implements OnInit {
   groupItems: MenuGroup[] = [];
   selectedGroupNumber: number = 0;
   selectedGroupName: string = '';
-  menuDisplayed: string = '';
 
   ngOnInit(): void {
     this.restaurantName = this.appSettingsService.getRestaurantName();
     this.menuService.getGroups().subscribe((result) => {
       this.groupItems = result;
       this.selectedGroupNumber = this.groupItems[0].id;
-    }
-    );
+      this.selectedGroupName = this.groupItems[0].name;
+    });
+    
 
   }
 
   groupSelected(thumbnailThatIsClicked: number) {
     this.selectedGroupNumber = thumbnailThatIsClicked;
-    this.menuDisplayed = this.selectedGroupNumber.toString();
-    this.selectedGroupName = this.groupItems.find((gi) => gi.id == this.selectedGroupNumber)?.name || ''
+    this.selectedGroupName = this.groupItems.find((gi) => gi.id == this.selectedGroupNumber)?.name || '';
   }
-
-
-
 }
 
 
