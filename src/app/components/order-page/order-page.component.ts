@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SideBarMenu } from 'src/app/models/side-bar-menu';
+import { MenuGroup } from 'src/app/models/menu-group';
 import { AppSettingsService } from 'src/app/services/app-settings.service';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'app-order-page',
@@ -8,26 +9,31 @@ import { AppSettingsService } from 'src/app/services/app-settings.service';
   styleUrls: ['./order-page.component.scss']
 })
 export class OrderPageComponent implements OnInit {
-  constructor(private AppSettingsService: AppSettingsService) { }
+  constructor(private appSettingsService: AppSettingsService, private menuService: MenuService) { }
 
   restaurantName: string = '';
-  datas: SideBarMenu[] = [];
-  selectedGroup: string = '';
+  groupItems: MenuGroup[] = [];
+  selectedGroupNumber: number = 0;
+  selectedGroupName: string = '';
+  menuDisplayed: string = '';
 
   ngOnInit(): void {
-    this.restaurantName = this.AppSettingsService.getRestaurantName()
-    this.datas = [
-      new SideBarMenu('../../../assets/images/Burger Logo.png', 'Burgers'),
-      new SideBarMenu('../../../assets/images/Pizza Logo.jpg', 'Pizzas'),
-      new SideBarMenu('../../../assets/images/Desserts Logo.jpg', 'Desserts')
-    ];
+    this.restaurantName = this.appSettingsService.getRestaurantName();
+    this.menuService.getGroups().subscribe((result) => {
+      this.groupItems = result;
+      this.selectedGroupNumber = this.groupItems[0].id;
+    }
+    );
 
-    this.selectedGroup = this.datas[0].groupType
   }
 
-  groupSelected(thumbnailThatIsClicked:string) {
-    this.selectedGroup = thumbnailThatIsClicked ;
+  groupSelected(thumbnailThatIsClicked: number) {
+    this.selectedGroupNumber = thumbnailThatIsClicked;
+    this.menuDisplayed = this.selectedGroupNumber.toString();
+    this.selectedGroupName = this.groupItems.find((gi) => gi.id == this.selectedGroupNumber)?.name || ''
   }
+
+
 
 }
 

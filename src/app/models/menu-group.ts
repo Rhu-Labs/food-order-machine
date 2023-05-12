@@ -1,4 +1,5 @@
 export interface MenuGroup {
     id: number;
-    name: string;
+    name: string;   
+    logoPath: string;
 }
