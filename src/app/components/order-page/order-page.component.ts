@@ -10,26 +10,20 @@ import { MenuService } from 'src/app/services/menu.service';
 })
 export class OrderPageComponent implements OnInit {
   constructor(private appSettingsService: AppSettingsService, private menuService: MenuService) { }
-
   restaurantName: string = '';
   groupItems: MenuGroup[] = [];
-  selectedGroupNumber: number = 0;
-  selectedGroupName: string = '';
+  selectedGroup: MenuGroup = new MenuGroup(0, '', '');
 
   ngOnInit(): void {
     this.restaurantName = this.appSettingsService.getRestaurantName();
     this.menuService.getGroups().subscribe((result) => {
       this.groupItems = result;
-      this.selectedGroupNumber = this.groupItems[0].id;
-      this.selectedGroupName = this.groupItems[0].name;
+      this.selectedGroup = this.groupItems[0];
     });
-    
-
   }
 
-  groupSelected(thumbnailThatIsClicked: number) {
-    this.selectedGroupNumber = thumbnailThatIsClicked;
-    this.selectedGroupName = this.groupItems.find((gi) => gi.id == this.selectedGroupNumber)?.name || '';
+  groupSelected(thumbnailThatIsClicked: MenuGroup) {
+    this.selectedGroup = thumbnailThatIsClicked;
   }
 }
 

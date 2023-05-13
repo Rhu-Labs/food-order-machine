@@ -5,22 +5,22 @@
     gap: 5rem;
 
 
-   .sidebar-menu{
+    .sidebar-menu {
         display: flex;
-    flex-direction: column;
+        flex-direction: column;
 
 
-    img{
-        width: 50%;
+        img {
+            width: 50%;
+        }
     }
 }
-}
 
-div.menu{
+div.menu {
     border: 3px solid grey;
 }
 
 
-.active-thumbnail{
+.active-thumbnail {
     border: 3px solid red;
 }
