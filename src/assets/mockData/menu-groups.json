@@ -1,22 +1,27 @@
  [
     {
       "id": 1,
-      "name": "Burgers"
+      "name": "Burgers",
+      "logoPath": "../../../assets/images/Burger Logo.png"
     },
     {
       "id": 2,
-      "name": "Pizzas"
+      "name": "Pizzas",
+      "logoPath": "../../../assets/images/Pizza Logo.jpg"
     },
     {
       "id": 3,
-      "name": "Salads"
+      "name": "Salads",
+      "logoPath":"../../../assets/images/Salad Logo.jpg"
     },
     {
       "id": 4,
-      "name": "Pastas"
+      "name": "Pastas",
+      "logoPath":"../../../assets/images/Pasta Logo.jpg"
     },
     {
       "id": 5,
-      "name": "Desserts"
+      "name": "Desserts",
+      "logoPath":"../../../assets/images/Desserts Logo.jpg"
     }
   ]
