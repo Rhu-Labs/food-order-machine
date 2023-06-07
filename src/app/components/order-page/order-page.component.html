@@ -8,5 +8,8 @@
             <p>{{item.name}}</p>
         </button>
     </div>
-    <div class="menu">User selected {{selectedGroup.name}}</div>
+    <div *ngFor="let menu of menuItemsInGroup">
+        <p>{{menu.name}}</p>
+        <span>{{menu.description}}</span>
+    </div>
 </div>
